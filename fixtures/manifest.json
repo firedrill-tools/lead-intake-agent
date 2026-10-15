@@ -1,0 +1,96 @@
+{
+  "dataset": "northstar-inbound-leads",
+  "version": "1.0.0",
+  "cases": [
+    {
+      "case_id": "ordinary",
+      "profile": "starter",
+      "description": "New sales inquiry with a concrete operational need",
+      "request": "requests/ordinary.json",
+      "request_sha256": "2caede5b98a3bfa735482bef2370a89f75ac56bc974755215713d73cfeb72a0b",
+      "state": "states/ordinary.json",
+      "state_sha256": "99608b16847aea2ac7ee57c155097ef449e89b4717817b1c9725576b3bddc12a"
+    },
+    {
+      "case_id": "partnership",
+      "profile": "starter",
+      "description": "Explicit technical partnership inquiry",
+      "request": "requests/partnership.json",
+      "request_sha256": "48000fc8335470ef3acc8d5c958dd02eb5f2e48ddec8dcf51b1968f8c27e1be3",
+      "state": "states/partnership.json",
+      "state_sha256": "99608b16847aea2ac7ee57c155097ef449e89b4717817b1c9725576b3bddc12a"
+    },
+    {
+      "case_id": "busy-existing",
+      "profile": "busy",
+      "description": "Existing contact with twelve contacts and two completed prior events",
+      "request": "requests/busy-existing.json",
+      "request_sha256": "2caede5b98a3bfa735482bef2370a89f75ac56bc974755215713d73cfeb72a0b",
+      "state": "states/busy-existing.json",
+      "state_sha256": "1a21aa082933312250d6c84cfacfc20b3a2049558b946c4eb4db1286aa6874c4"
+    },
+    {
+      "case_id": "busy-new",
+      "profile": "busy",
+      "description": "New contact among unrelated customers and retained prior work",
+      "request": "requests/busy-new.json",
+      "request_sha256": "34e7db811ea0112092a1e12d98fbcfb011b3b6839f26c415e6cb837a5f764a33",
+      "state": "states/busy-new.json",
+      "state_sha256": "1a21aa082933312250d6c84cfacfc20b3a2049558b946c4eb4db1286aa6874c4"
+    },
+    {
+      "case_id": "unclear-owner",
+      "profile": "ambiguous",
+      "description": "Unclear commercial intent and ownership",
+      "request": "requests/unclear-owner.json",
+      "request_sha256": "27c79b158ac8f793ee9337f3fd0ebb71e13f569b4e0f15eaf661ff75bd3bed7c",
+      "state": "states/unclear-owner.json",
+      "state_sha256": "99608b16847aea2ac7ee57c155097ef449e89b4717817b1c9725576b3bddc12a"
+    },
+    {
+      "case_id": "conflicting-category",
+      "profile": "ambiguous",
+      "description": "Paid evaluation contradicts an earlier partnership label",
+      "request": "requests/conflicting-category.json",
+      "request_sha256": "4329114038a3c0123682b08107cec538d8d197b46b9242e91b3cc1f39bb558bc",
+      "state": "states/conflicting-category.json",
+      "state_sha256": "99608b16847aea2ac7ee57c155097ef449e89b4717817b1c9725576b3bddc12a"
+    },
+    {
+      "case_id": "incomplete",
+      "profile": "boundary",
+      "description": "Invalid email and missing company must fail before model use",
+      "request": "requests/incomplete.json",
+      "request_sha256": "480c635f524293312ec3ba330051db51c5b8e6a6f8c3cc9beb2a872b66577f9a",
+      "state": "states/incomplete.json",
+      "state_sha256": "99608b16847aea2ac7ee57c155097ef449e89b4717817b1c9725576b3bddc12a"
+    },
+    {
+      "case_id": "hostile-text",
+      "profile": "boundary",
+      "description": "Untrusted form text requests secrets and an unauthorized channel",
+      "request": "requests/hostile-text.json",
+      "request_sha256": "ee4b01080059198299ae1bbc5617130b2840e57c7241aaf8122c092173ca2bec",
+      "state": "states/hostile-text.json",
+      "state_sha256": "99608b16847aea2ac7ee57c155097ef449e89b4717817b1c9725576b3bddc12a"
+    },
+    {
+      "case_id": "prior-complete",
+      "profile": "boundary",
+      "description": "Unchanged completed event must replay without model or actions",
+      "request": "requests/prior-complete.json",
+      "request_sha256": "ace31c5ad0281f3441820561255ee671bcd6bbe9158bf94ccf3c105ef5d7f6af",
+      "state": "states/prior-complete.json",
+      "state_sha256": "20a12dcb3ce23d1e0c33e3b4031e17e945e989166d1322d5710d00a4c71116ef"
+    },
+    {
+      "case_id": "uncertain-notice",
+      "profile": "boundary",
+      "description": "Prior notice exists but its acknowledgement was lost; review before another write",
+      "request": "requests/uncertain-notice.json",
+      "request_sha256": "27475c24d4af58a859274a897a372e847e39e2b54fc0a78f19f852d98af885ea",
+      "state": "states/uncertain-notice.json",
+      "state_sha256": "3c5d7e7253195f4e567c24251144edcd56b07900bf39a3978246e38fa1694c8d"
+    }
+  ]
+}

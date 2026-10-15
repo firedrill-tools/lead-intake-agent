@@ -4,4 +4,7 @@ __pycache__/
 dist/
 *.egg-info/
 state.sqlite*
+*.sqlite*
+run-output/
+tmp/
 .env

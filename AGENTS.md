@@ -1,8 +1,11 @@
-# Agent working notes
+# Working notes
 
-- Entrypoint: `lead-intake`; FastAPI app in `src/lead_intake/service.py`.
-- The model decision is `src/lead_intake/model.py`; it calls Gemini only after Pydantic input validation and webhook authentication.
-- Dependency seam: `src/lead_intake/connectors.py` selects local SQLite actions or Pipedream Connect actions at startup. Never silently switch modes.
-- State: SQLite `events`, `contacts`, `notifications`; use a new file for independent cases. Run one worker. For remote connector mode, inspect uncertain notification outcomes manually.
-- Live mode needs a Pipedream development project, connected test Attio and Slack accounts, exact auth provision IDs and channel IDs. Do not use production accounts.
-- No Firedrill integration exists until the new interface is qualified. Do not copy retired APIs or claim model results from offline tests.
+- Entrypoint: `lead-intake`; HTTP app `src/lead_intake/service.py`. Use ASGI lifespan (`with TestClient(...)` in tests). Start one app/worker per durable SQLite file. The lock serializes threads in that app only.
+- Model boundary: `model.py` uses actual Gemini GenerateContent after validation/auth/replay checks. Accept one unblocked STOP JSON decision; keep failed output/raw usage. No canned normal-path answers. Owned clients close per call; injected clients stay caller-owned.
+- Connectors: `connectors.py`; default synthetic SQLite actions, explicit Pipedream opt-in. Freeze scope at startup. Require identity-bound receipts, not HTTP 200. Never switch modes on failure. The Slack component's auth prop is `slack`.
+- State: `store.py`; events, contacts, notices, model/action attempts and dataset metadata. Successful replays retain original evidence. Pending changed/unknown scope and uncertain CRM/notice outcomes return 409. Inspect authenticated GET `/events/{event_id}` and actual remote state; do not blindly resend, delete history or invent acknowledgements.
+- Datasets: `datasets.py`, `fixtures/manifest.json`, `scripts/build_fixtures.py`. Four profiles/ten cases; model-free `--list-cases` and `--init-case CASE --db NEW_PATH --request-out NEW_PATH`. Initialization is exclusive/private and resets local SQLite only; never describe it as resetting connected accounts. Historical fixture decisions are explicitly synthetic, not recorded model runs.
+- Pipedream live work needs ALLOW_PIPEDREAM_ACTIONS=1, a development project, explicit external user, test auth provision IDs and exact Slack channel IDs. Source-inspected Attio 0.1.1 and Slack 0.1.6 actions still require live account/schema qualification. Avoid production accounts and retain the scope/effect evidence.
+- Ownership: application lifespan closes constructed connector and SQLite; supplied adapters are caller-owned. Disconnecting a client does not stop a synchronous task or roll back an external effect. No background scheduler/job is started.
+- Verification: `uv sync --dev --locked`, `uv run --no-sync pytest -q`, help/list, `uv build --wheel`, `uv run --no-sync python scripts/check_wheel.py`. Native HTTP mock proofs are offline SDK/application proofs, not live model quality or hosted interception. Missing measurements/cost stay unknown.
+- No new Firedrill interface is qualified. Do not copy retired APIs/private platform code. Keep run-output/databases/credentials untracked. License/publication and paid campaigns need deliberate selection.

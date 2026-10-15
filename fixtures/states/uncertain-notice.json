@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "synthetic": true,
+  "contacts": [
+    {
+      "email": "casey@quartz.example",
+      "name": "Casey Lane",
+      "company": "Quartz Commerce",
+      "summary": "Quartz needs a demonstration of returns routing across three regional teams."
+    }
+  ],
+  "history": [
+    {
+      "request": {
+        "event_id": "form-1304",
+        "name": "Casey Lane",
+        "email": "casey@quartz.example",
+        "company": "Quartz Commerce",
+        "message": "We need a demo for routing returns exceptions across our three regional teams."
+      },
+      "decision": {
+        "route": "sales",
+        "summary": "Quartz needs a demonstration of returns routing across three regional teams.",
+        "reason": "Fictional prior team routing decision"
+      },
+      "stage": "notification_started",
+      "notice_recorded": true
+    }
+  ]
+}

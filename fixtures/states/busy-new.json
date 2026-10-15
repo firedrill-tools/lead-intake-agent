@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "synthetic": true,
+  "contacts": [
+    {
+      "email": "ari@cedar.example",
+      "name": "Ari Patel",
+      "company": "Cedar Freight",
+      "summary": "Earlier inquiry about exception routing; awaiting updated rollout timing."
+    },
+    {
+      "email": "nora@acorn.example",
+      "name": "Nora Chen",
+      "company": "Acorn Foods",
+      "summary": "Acorn Foods previously asked about retail replenishment routing."
+    },
+    {
+      "email": "owen@beacon.example",
+      "name": "Owen Reed",
+      "company": "Beacon Solar",
+      "summary": "Beacon Solar previously asked about installer onboarding handoffs."
+    },
+    {
+      "email": "samira@cobalt.example",
+      "name": "Samira Ali",
+      "company": "Cobalt Labs",
+      "summary": "Cobalt Labs previously asked about customer escalation ownership."
+    },
+    {
+      "email": "theo@delta.example",
+      "name": "Theo Kim",
+      "company": "Delta Print",
+      "summary": "Delta Print previously asked about print-job exception review."
+    },
+    {
+      "email": "imani@elm.example",
+      "name": "Imani Cole",
+      "company": "Elm Mobility",
+      "summary": "Elm Mobility previously asked about fleet maintenance alerts."
+    },
+    {
+      "email": "luca@fern.example",
+      "name": "Luca Rossi",
+      "company": "Fern Works",
+      "summary": "Fern Works previously asked about supplier integration discussions."
+    },
+    {
+      "email": "priya@grove.example",
+      "name": "Priya Shah",
+      "company": "Grove Energy",
+      "summary": "Grove Energy previously asked about metering incident triage."
+    },
+    {
+      "email": "felix@hearth.example",
+      "name": "Felix Hart",
+      "company": "Hearth Supply",
+      "summary": "Hearth Supply previously asked about wholesale order scheduling."
+    },
+    {
+      "email": "mei@iris.example",
+      "name": "Mei Tan",
+      "company": "Iris Networks",
+      "summary": "Iris Networks previously asked about technical partner programme."
+    },
+    {
+      "email": "rafael@juniper.example",
+      "name": "Rafael Cruz",
+      "company": "Juniper Studio",
+      "summary": "Juniper Studio previously asked about shared intake ownership."
+    },
+    {
+      "email": "ada@kite.example",
+      "name": "Ada Brooks",
+      "company": "Kite Transit",
+      "summary": "Kite Transit previously asked about dispatch handoff automation."
+    }
+  ],
+  "history": [
+    {
+      "request": {
+        "event_id": "prior-0001",
+        "name": "Nora Chen",
+        "email": "nora@acorn.example",
+        "company": "Acorn Foods",
+        "message": "We previously asked about retail replenishment routing."
+      },
+      "decision": {
+        "route": "sales",
+        "summary": "Acorn Foods previously asked about retail replenishment routing.",
+        "reason": "Fictional prior team routing decision"
+      },
+      "stage": "complete",
+      "notice_recorded": true
+    },
+    {
+      "request": {
+        "event_id": "prior-0009",
+        "name": "Mei Tan",
+        "email": "mei@iris.example",
+        "company": "Iris Networks",
+        "message": "We previously asked about technical partner programme."
+      },
+      "decision": {
+        "route": "partnerships",
+        "summary": "Iris Networks previously asked about technical partner programme.",
+        "reason": "Fictional prior team routing decision"
+      },
+      "stage": "complete",
+      "notice_recorded": true
+    }
+  ]
+}
