@@ -28,3 +28,5 @@ The local adapter is an application-side replacement for the two Pipedream actio
 ## Evidence
 
 `scenarios/README.md` records normal, incomplete, replay, partial failure and uncertain-outcome cases. Offline tests cover HTTP validation and local state behavior. No live Gemini, Pipedream, Attio or Slack call has been executed here; model quality, external schemas and usage remain unmeasured. No public license has been selected.
+
+Explore related applications in the [Firedrill example catalog](https://github.com/firedrill-tools/firedrill-example-catalog). Product and setup references: [Firedrill](https://firedrill.run/) and the [official developer documentation](https://docs.firedrill.run/). Use documentation matching the qualified release; this repository records its current integration limits above.
