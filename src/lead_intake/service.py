@@ -1,5 +1,5 @@
 """Authenticated, serialized webhook execution with durable phase evidence."""
-from contextlib import asynccontextmanager
+from contextlib import asynccontextmanager,closing
 from functools import partial
 from hashlib import sha256
 import hmac
@@ -173,7 +173,7 @@ def create_app(db_path: Path | None = None, classifier: Callable | None = None,
         authorize(x_intake_token)
         # Separate read connection can observe committed phases while a task is
         # running. It cannot mutate the shared action connection.
-        with sqlite3.connect(db_path) as reader:
+        with closing(sqlite3.connect(db_path)) as reader:
             reader.row_factory = sqlite3.Row
             result = store.view(reader,event_id)
         if result is None:

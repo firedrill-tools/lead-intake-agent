@@ -1,4 +1,5 @@
 """Digest-bound fictional form inputs and SQLite reset state; no model calls."""
+from contextlib import closing
 from hashlib import sha256
 import json
 import os
@@ -150,7 +151,7 @@ def initialize_case(case_id, db_path, request_out=None, *, root=None):
         context = {"dataset": DATASET, "version": VERSION, "profile": case["profile"], "case_id": case_id,
                    "request_sha256": request_hash, "request_file_sha256": case["request_sha256"],
                    "seed_sha256": case["state_sha256"], "reset_coverage": "local_sqlite_only"}
-        with sqlite3.connect(db_path) as conn:
+        with closing(sqlite3.connect(db_path)) as conn:
             from .connectors import SyntheticActions
             store.initialize(conn)
             actions = SyntheticActions(conn)
