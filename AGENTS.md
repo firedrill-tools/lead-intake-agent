@@ -9,3 +9,7 @@
 - Ownership: application lifespan closes constructed connector and SQLite; supplied adapters are caller-owned. Disconnecting a client does not stop a synchronous task or roll back an external effect. No background scheduler/job is started.
 - Verification: `uv sync --dev --locked`, `uv run --no-sync pytest -q`, help/list, `uv build --wheel`, `uv run --no-sync python scripts/check_wheel.py`. Native HTTP mock proofs are offline SDK/application proofs, not live model quality or hosted interception. Missing measurements/cost stay unknown.
 - No new Firedrill interface is qualified. Do not copy retired APIs/private platform code. Keep run-output/databases/credentials untracked. License/publication and paid campaigns need deliberate selection.
+
+## Current Firedrill connection — 2026-10-19
+
+Read `firedrill/README.md` for the optional released CLI/SDK 2.2.2 command integration. It invokes the real ASGI app factory/router/lifespan with production HTTPX ASGI transport and no classifier/action injection. Keep explicit synthetic mode, private SQLite/form state, per-attempt outer-ID mapping and actual event inspection. Do not call in-process ASGI proof hosted-network/Pipedream proof. Run integration checks with the existing 59 native/HTTP/data checks and package gate. Release availability supersedes earlier pending-release notes; authenticated persisted/live proof remains separate.

@@ -8,3 +8,7 @@ state.sqlite*
 run-output/
 tmp/
 .env
+
+node_modules/
+
+.runs/

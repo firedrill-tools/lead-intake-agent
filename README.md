@@ -84,3 +84,7 @@ uv run --no-sync python scripts/check_wheel.py
 No live Gemini/Pipedream/Attio/Slack call is claimed. Usage in controlled responses is synthetic evidence of parser behavior, not billing. [Scenario briefs](scenarios/README.md) describe task-specific criteria without a fabricated overall score. The new Firedrill release/contract, provider access, connected test accounts and publication/license choices remain external gates. A thin Firedrill integration will follow the qualified release; no retired API is included.
 
 Related applications: [Firedrill example catalog](https://github.com/firedrill-tools/firedrill-example-catalog). Product/setup references: [Firedrill](https://firedrill.run/) and [official developer documentation](https://docs.firedrill.run/). Match documentation to the qualified release. Gemini completion/usage behavior follows the [GenerateContent API contract](https://ai.google.dev/api/generate-content).
+
+## Current Firedrill connection — 2026-10-19
+
+The [agent-first integration](firedrill/README.md) exact-pins CLI/SDK 2.2.2 and invokes the actual ASGI webhook application with fresh private SQLite state and real default Gemini classifier. It uses the local ASGI callable seam and explicit synthetic connectors. Earlier pending-release notes are historical; authenticated saved runs, live models and hosted Pipedream account proof remain pending.

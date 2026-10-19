@@ -1,0 +1,48 @@
+{
+  "schemaVersion": "2026-10-14",
+  "name": "Lead intake \u2014 actual Gemini and ASGI webhook application",
+  "target": {
+    "kind": "command",
+    "argv": [
+      "node",
+      "firedrill/target.mjs"
+    ]
+  },
+  "scenarios": [
+    {
+      "id": "ordinary",
+      "name": "New inquiry",
+      "input": {
+        "caseId": "ordinary"
+      }
+    },
+    {
+      "id": "unclear-owner",
+      "name": "Unclear commercial owner",
+      "input": {
+        "caseId": "unclear-owner"
+      }
+    },
+    {
+      "id": "prior-complete",
+      "name": "Completed event replay",
+      "input": {
+        "caseId": "prior-complete"
+      }
+    },
+    {
+      "id": "uncertain-notice",
+      "name": "Unknown earlier notification outcome",
+      "input": {
+        "caseId": "uncertain-notice"
+      }
+    }
+  ],
+  "repetitions": 1,
+  "concurrency": 1,
+  "limits": {
+    "timeoutMs": 240000,
+    "maxRuns": 4,
+    "maxOutputBytes": 4194304
+  }
+}
