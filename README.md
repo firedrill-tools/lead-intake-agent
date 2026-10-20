@@ -2,6 +2,8 @@
 
 An authenticated form webhook asks Gemini to route an inbound inquiry to sales, partnerships or review. The service then upserts one contact and posts one team notice. SQLite records the original decision, every model/action attempt, acknowledgements and replay state. Synthetic SQLite actions are the default; an explicitly enabled Pipedream Connect adapter uses development Attio and Slack accounts.
 
+This example repository is publicly viewable. A project license has not been selected.
+
 ## Simulate with Firedrill
 
 [Firedrill](https://firedrill.run/) is a simulation platform for AI agents.
@@ -95,7 +97,7 @@ uv run --no-sync python scripts/check_wheel.py
 
 **59 offline checks passed.** Tests retain the actual Gemini and Pipedream SDKs and replace only their HTTP transports. They exercise native request/response parsing, completed/rejected output, missing/zero usage, one HTTP attempt on provider errors, OAuth/action configuration, receipt identity checks, client cleanup, concurrent duplicate intake, failed-model retry evidence, legacy recovery and all ten initialized situations. A full ASGI request runs both actual SDK paths and an unchanged replay; another preserves usage from a rejected Gemini attempt and its successful explicit retry. Classifier-injected fixture tests prove local state behavior, not model judgment. The wheel is exercised outside the checkout without credentials.
 
-No live Gemini/Pipedream/Attio/Slack call is claimed. Usage in controlled responses is synthetic evidence of parser behavior, not billing. [Scenario briefs](scenarios/README.md) describe task-specific criteria without a fabricated overall score. Authenticated persisted Firedrill runs, provider access, connected test accounts and publication/license choices remain external gates. The included [Firedrill integration](firedrill/README.md) invokes the actual application with synthetic connectors.
+No live Gemini/Pipedream/Attio/Slack call is claimed. Usage in controlled responses is synthetic evidence of parser behavior, not billing. [Scenario briefs](scenarios/README.md) describe task-specific criteria without a fabricated overall score. Authenticated persisted Firedrill runs, provider access, connected test accounts and license choices remain external gates. The included [Firedrill integration](firedrill/README.md) invokes the actual application with synthetic connectors.
 
 Related applications: [Firedrill example catalog](https://github.com/firedrill-tools/firedrill-example-catalog). Product/setup references: [Firedrill](https://firedrill.run/) and [official developer documentation](https://docs.firedrill.run/). Match documentation to the qualified release. Gemini completion/usage behavior follows the [GenerateContent API contract](https://ai.google.dev/api/generate-content).
 

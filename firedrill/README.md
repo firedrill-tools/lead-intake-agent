@@ -56,7 +56,7 @@ Configure remote OAuth MCP **https://mcp.firedrill.run/mcp** with the [host-spec
 
 Preserve operation IDs and private journals after uncertainty. Use `--resume OPERATION_ID` for the exact SDK execution or `--result BATCH_ID` for retained reads. A fresh simulation is new work. The local invocation mapping is a locator, separate from SDK recovery authority. Runner exit codes preserve errors, pending work/assessment and optional gates; this observation-only recipe requests no grading or gate.
 
-Ordinary CI is offline. Configure actual scope, protected credentials and budgets before using the [live CI generator](https://docs.firedrill.run/guides/ci). Authenticated persisted success/negative runs, live model quality/cost, real connector proof, publication and licensing remain separate gates.
+Ordinary CI is offline. Configure actual scope, protected credentials and budgets before using the [live CI generator](https://docs.firedrill.run/guides/ci). Authenticated persisted success/negative runs, live model quality/cost, real connector proof, and licensing remain separate gates.
 
 References: [SDK](https://docs.firedrill.run/sdk/typescript), [command targets](https://docs.firedrill.run/guides/callbacks), [operator MCP](https://docs.firedrill.run/guides/control-mcp).
 
