@@ -99,7 +99,7 @@ uv run --no-sync python scripts/check_wheel.py
 
 No live Gemini/Pipedream/Attio/Slack call is claimed. Usage in controlled responses is synthetic evidence of parser behavior, not billing. [Scenario briefs](scenarios/README.md) describe task-specific criteria without a fabricated overall score. Authenticated persisted Firedrill runs, provider access, connected test accounts and license choices remain external gates. The included [Firedrill integration](firedrill/README.md) invokes the actual application with synthetic connectors.
 
-Related applications: [Firedrill example catalog](https://github.com/firedrill-tools/firedrill-example-catalog). Product/setup references: [Firedrill](https://firedrill.run/) and [official developer documentation](https://docs.firedrill.run/). Match documentation to the qualified release. Gemini completion/usage behavior follows the [GenerateContent API contract](https://ai.google.dev/api/generate-content).
+Related applications: [Firedrill examples](https://docs.firedrill.run/guides/examples). Product/setup references: [Firedrill](https://firedrill.run/) and [official developer documentation](https://docs.firedrill.run/). Match documentation to the qualified release. Gemini completion/usage behavior follows the [GenerateContent API contract](https://ai.google.dev/api/generate-content).
 
 ## Current Firedrill connection — 2026-10-19
 
