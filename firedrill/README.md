@@ -1,4 +1,18 @@
-# Firedrill agent-first integration
+# Simulate this agent with Firedrill
+
+Firedrill is a simulation platform for AI agents. Your coding agent can prepare
+and operate these simulations; the application and its model run in your own
+repository or CI.
+
+Start in the repository root, not inside `firedrill/`:
+
+```sh
+npx firedrill-run init
+```
+
+Authorize Firedrill and select a project/environment. Installation choices are
+optional; skip them when using the locked `firedrill/` toolchain below. This setup
+does not invoke the target agent or grant it access to real business accounts.
 
 The optional execution toolchain exact-pins released CLI and TypeScript SDK **2.2.2**, verified October 19, 2026. Node 22+ is required; application/provider dependencies remain in the original Python lockfile. The supported command target invokes the application's real ASGI factory/router through production HTTPX ASGI transport. It does not start a hosted HTTP server or inject a classifier/action implementation.
 
@@ -9,12 +23,11 @@ From the repository root with `uv` on PATH:
 ```sh
 uv sync --locked --dev
 npm ci --prefix firedrill --ignore-scripts --no-audit --no-fund
-npm test --prefix firedrill
 firedrill_cli=firedrill/node_modules/@firedrill-run/cli/bin/firedrill.mjs
 node "$firedrill_cli" validate firedrill/scenario.json --json --non-interactive
 ```
 
-Offline validation allocates no batch. Select the actual project/environment with `node "$firedrill_cli" init` in a human terminal. Automation supplies `FIREDRILL_TOKEN`, `FIREDRILL_PROJECT_ID` and `FIREDRILL_ENVIRONMENT_ID` through its secret store. New lead classification independently needs `GEMINI_API_KEY` and an enabled `GEMINI_MODEL` or recipe `configuration.parameters.model`. Keep credentials out of recipes and source.
+Offline validation allocates no batch. Select the actual project/environment with `npx firedrill-run init` in a human terminal. Automation supplies `FIREDRILL_TOKEN`, `FIREDRILL_PROJECT_ID` and `FIREDRILL_ENVIRONMENT_ID` through its secret store. New lead classification independently needs `GEMINI_API_KEY` and an enabled `GEMINI_MODEL` or recipe `configuration.parameters.model`. Keep credentials out of recipes and source.
 
 ## Execute the real webhook application
 
@@ -46,3 +59,11 @@ Preserve operation IDs and private journals after uncertainty. Use `--resume OPE
 Ordinary CI is offline. Configure actual scope, protected credentials and budgets before using the [live CI generator](https://docs.firedrill.run/guides/ci). Authenticated persisted success/negative runs, live model quality/cost, real connector proof, publication and licensing remain separate gates.
 
 References: [SDK](https://docs.firedrill.run/sdk/typescript), [command targets](https://docs.firedrill.run/guides/callbacks), [operator MCP](https://docs.firedrill.run/guides/control-mcp).
+
+## Offline verification
+
+After installing the application dependencies and locked integration toolchain,
+run `npm test --prefix firedrill` to exercise the adapter checks. These checks are
+optional for first use and call no paid model. The Node 22+ requirement above is
+for the Firedrill clients; it does not lower any application runtime requirement
+in the root README.
